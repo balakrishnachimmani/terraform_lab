@@ -1,19 +1,27 @@
+
+
+
+# Configure the AWS Provider
 provider "aws" {
-  profile = "myaws"
-  region  = var.region
+  region     = "us-west-2"
+  access_key = "AKIAWHV44PQBE2TMV2VP"
+  secret_key = "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"
 }
+module "ec2_instance" {
+  source  = "terraform-aws-modules/ec2-instance/aws"
+  version = "~> 3.0"
 
+  name = "single-instance"
 
-resource "aws_s3_bucket" "b" {
-  bucket = "myawsbucket12345554555"
-  acl    = "private"
+  ami                    = "ami-0aa7d40eeae50c9a9"
+  instance_type          = "t2.micro"
+  key_name               = "user1"
+ 
+  vpc_security_group_ids = ["	sg-02dc6d10c1b47f88c"]
+ 
 
   tags = {
-    Name        = "My bucket"
-    Environment = "Dev"
+    Terraform   = "true"
+    Environment = "dev"
   }
-}
-
-variable "region" {
-  
 }
