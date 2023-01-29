@@ -12,7 +12,7 @@ module "ec2_instance" {
 
   name = "single-instance"
 
-  ami                    = "ami-0aa7d40eeae50c9a9"
+  ami                    = "ami-00874d747dde814fa"
   instance_type          = "t2.micro"
   key_name               = "user1"
  
