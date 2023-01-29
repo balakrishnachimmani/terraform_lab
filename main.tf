@@ -17,7 +17,7 @@ provider "aws" {
 
 
 resource "aws_s3_bucket" "b" {
-  bucket = "myawsbucket12345554555"
+  bucket = "myawsbucket12345jkgtd554555"
   acl    = "private"
 
   tags = {
