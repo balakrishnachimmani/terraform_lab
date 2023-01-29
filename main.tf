@@ -16,17 +16,17 @@ provider "aws" {
 
 
 
+resource "aws_s3_bucket" "b" {
+  bucket = "myawsbucket12345554555"
+  acl    = "private"
 
-resource "aws_instance" "foo" {
-  ami           = "ami-0aa7d40eeae50c9a9" # us-west-2
-  instance_type = "t2.micro"
-
-  network_interface {
-    network_interface_id = aws_network_interface.foo.id
-    device_index         = 0
+  tags = {
+    Name        = "My bucket"
+    Environment = "Dev"
   }
+}
 
-  credit_specification {
-    cpu_credits = "unlimited"
+variable "region" {
+  
 }
-}
+
