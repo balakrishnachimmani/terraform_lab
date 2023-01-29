@@ -4,8 +4,7 @@
 # Configure the AWS Provider
 provider "aws" {
   region     = "us-west-2"
-  access_key = "AKIAWHV44PQBE2TMV2VP"
-  secret_key = "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"
+ 
 }
 module "ec2_instance" {
   source  = "terraform-aws-modules/ec2-instance/aws"
